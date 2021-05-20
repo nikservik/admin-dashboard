@@ -60,6 +60,11 @@ php artisan vendor:publish  --tag="admin-dashboard-assets"
 В итоговом файле останутся все классы tailwindcss, это удобно для быстрой отладки отображения.
 Но сам файл получается больше 6Мб.
 
+После генерации стилей, их нужно опубликовать в основном приложении.
+Сначала нужно загрузить обновленную версию пакета `admin-dashboard` командой `composer update`.
+После этого опубликовать файл стилей командой `php artisan vendor:publish --tag=admin-dashboard-assets`.
+Можно еще поменять строку подключения стилей в `resources/views/layout.blade.php`
+
 ## Тестирование
 
 ```bash
@@ -73,3 +78,4 @@ phpunit
 
 ## TODO
 
+- автоматически обновлять цифру в строке подключения стилей в resources/views/layout.blade.php
