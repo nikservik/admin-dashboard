@@ -43,7 +43,9 @@
     "scripts": {
         "psalm": "vendor/bin/psalm",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "build": "NODE_ENV=production postcss ./resources/sass/admin.scss -o ./resources/assets/admin.css",
+        "dev": "postcss ./resources/sass/admin.scss -o ./resources/assets/admin.css"
     },
     "config": {
         "preferred-install": "dist",

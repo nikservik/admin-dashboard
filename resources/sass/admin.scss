@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+    display: flex; min-height: 100vh; flex-direction: column; }
+div.content {
+    flex: 1 0 auto; }
+
+header {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-600 text-white; }
+footer {
+    @apply bg-gray-300 py-4; }
+h4 {
+    @apply text-xl my-2; }
+.page-header {
+    @apply text-3xl px-4 py-4 text-gray-900 font-bold; }
+.sub-title {
+    @apply bg-gray-100 border-b-2 border-blue-600 text-gray-600 mt-10 px-4 py-2 rounded-lg text-xl; }
+.form-group {
+    @apply mx-4 my-4; }
+    .form-group label {
+        @apply ml-3 font-bold; }
+    .form-group input, .form-group textarea {
+        @apply p-3 text-xl outline-none w-full border-2 rounded-lg; }
+        .form-group input[type=checkbox] {
+            @apply px-0 w-3 ml-3; }
+        .form-group input:disabled {
+            @apply border-0; }
+    .form-group select {
+        @apply p-3 text-xl outline-none w-full border-2 rounded-lg appearance-none; }
+    .form-group.has-error label {
+        @apply text-red-800; }
+    .form-group.has-error input  {
+        @apply border-red-400; }
+    .form-group.has-error select {
+        @apply border-red-400; }
+    .form-group .error-description {
+        @apply text-red-800 mx-4; }
+.button {
+    @apply px-6 py-3 text-xl text-white font-bold bg-blue-500 shadow-xl rounded-lg; }
+    .button.small {
+        @apply px-4 py-2 text-lg shadow-md; }
+    .button.circle {
+        @apply px-2 py-2 text-lg shadow-md; }
+    .button:focus {
+        @apply outline-none; }
+    .button:hover {
+        @apply bg-blue-600; }
+    .button:disabled {
+        @apply bg-blue-400; }
+    .button.red {
+        @apply bg-red-500; }
+        .button.red:hover {
+            @apply bg-red-600; }
+        .button.red:disabled {
+            @apply bg-red-300; }
+    .button.light {
+        @apply bg-white text-blue-500 text-base border-blue-500 border-2; }
+        .button.light.small {
+            @apply px-2 py-1; }
+        .button.light:hover {
+            @apply bg-blue-500 text-white; }
+        .button.light:disabled {
+            @apply text-blue-300 border-blue-300; }
+.support-message {
+    @apply my-4;
+    .user-info {
+        @apply text-sm text-gray-500; }
+    .message {
+        @apply inline-block rounded-b px-4 py-4 relative;
+        a:hover {
+            @apply underline; }
+        .controls {
+            @apply absolute top-0 right-0 p-2 hidden; }
+        &:hover .controls {
+            @apply block; }
+    }
+    &.user {
+        .message {
+            @apply mr-10 rounded-tr bg-green-100; }
+    }
+    &.admin {
+        @apply text-right;
+        .message {
+            @apply ml-10 rounded-tl bg-gray-100 text-left;
+            .controls {
+                @apply bg-gray-100; }
+        }
+        &.notification .message {
+            @apply bg-blue-100 ml-0 my-2 rounded-tr w-full ring ring-blue-100 ring-offset-4;  }
+    }
+}
+.error {
+    @apply rounded-lg border border-red-400 bg-red-200 text-red-800 py-4 px-8 m-4; }
+.info {
+    @apply rounded-lg border border-green-400 bg-green-200 text-green-800 py-4 px-8 m-4; }
+.text p {
+    @apply m-4; }
+.subscription {
+    @apply px-4 py-2 border rounded-lg border-blue-600 text-blue-600 shadow-md h-full; }
+    .subscription:hover {
+        @apply bg-blue-100; }
+    .subscription .description {
+        @apply text-sm; }
+    .subscription.active {
+        @apply bg-blue-600 text-white; }
+        .subscription.active:hover {
+            @apply bg-blue-600; }
+
+.selector {
+    @apply inline-block rounded py-1 px-3 mb-1 rounded-full border bg-white text-blue-500 border-blue-500 shadow; }
+    .selector:hover {
+        @apply no-underline bg-blue-100; }
+    .selector.active {
+        @apply bg-blue-500 text-white; }
+        .selector.active:hover {
+            @apply bg-blue-500; }
+.user-card {
+    @apply p-4 m-4 border rounded-lg bg-white shadow flex items-start;
+    &:hover {
+        @apply bg-gray-200;  }
+    a:hover {
+        @apply underline; }
+}
+.status-square {
+    @apply rounded mr-4; width: 20px; height: 20px; }
+.sub-header {
+    @apply text-xl inline-block px-4 py-2 bg-blue-100 text-blue-600 font-bold rounded-b-lg mx-8 border-b-2 border-blue-600; }
