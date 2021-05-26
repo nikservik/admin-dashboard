@@ -20,6 +20,7 @@ class TestCase extends Orchestra
             AdminDashboardServiceProvider::class,
             UsersServiceProvider::class,
             ActionServiceProvider::class,
+            TestServiceProvider::class,
         ];
     }
 
