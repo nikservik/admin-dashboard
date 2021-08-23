@@ -30,10 +30,8 @@
             </div>
 
             <!-- основной контент -->
-            <main class="flex-1 relative overflow-y-auto focus:outline-none py-6 pt-16 lg:pt-6">
-                <div class="max-w-7xl mx-auto p-4 sm:px-6 md:px-8">
-                    {{ $slot }}
-                </div>
+            <main class="flex-1 relative overflow-y-auto focus:outline-none md:py-4 lg:py-6 pt-16 lg:pt-6">
+                {{ $slot }}
             </main>
         </div>
     </div>
