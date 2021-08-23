@@ -1,6 +1,4 @@
-@extends('admin-dashboard::layout')
-
-@section('content')
+<x-admin-dashboard-app>
     <h1 class="page-header">@lang('admin-dashboard::dashboard.title')</h1>
     <div class="flex flex-wrap my-4">
         @foreach ($modules as $module)
@@ -18,5 +16,5 @@
             </div>
         @endforeach
     </div>
-@endsection
+</x-admin-dashboard-app>
 

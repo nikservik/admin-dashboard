@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@lang('app.name') - @lang('admin-dashboard::layout.page-title')</title>
+  <title>@lang('admin-dashboard::layout.page-title')</title>
   <!-- Styles -->
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
   <link href="{{ asset('css/admin.css') }}?1" rel="stylesheet">

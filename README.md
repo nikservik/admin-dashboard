@@ -48,7 +48,7 @@ php artisan vendor:publish  --tag="admin-dashboard-assets"
 1. В его конфигурации должен быть ключ `route`. 
    Этот путь будет использоваться для перехода к модулю.
 2. В локализации пакета должен быть файл `admin.php`, содержащий строки
-   `dashboard-name` и `dashboard-description`.
+   `dashboard-name`, `dashboard-description`, `dashboard-icon-path`(svg path).
 3. В оформлении должны использоваться стили из admin.css.
 
 ### Общие стили (css) для всех модулей

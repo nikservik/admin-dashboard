@@ -4,6 +4,8 @@ namespace Nikservik\AdminDashboard;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Nikservik\AdminDashboard\Components\App;
+use Nikservik\AdminDashboard\Components\Menu;
 
 class AdminDashboardServiceProvider extends ServiceProvider
 {
@@ -13,6 +15,7 @@ class AdminDashboardServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang/', 'admin-dashboard');
         $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'admin-dashboard');
         $this->registerBladeDirective();
+        $this->registerComponents();
 
         if (! $this->app->runningInConsole()) {
             return;
@@ -36,5 +39,13 @@ class AdminDashboardServiceProvider extends ServiceProvider
         Blade::directive('nl2br', function($expression) {
             return "<?php echo nl2br({$expression}); ?>";
         });
+    }
+
+    protected function registerComponents()
+    {
+        $this->loadViewComponentsAs('admin-dashboard', [
+            App::class,
+            Menu::class,
+        ]);
     }
 }

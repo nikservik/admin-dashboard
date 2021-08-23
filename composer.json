@@ -52,7 +52,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "github-oauth": {
-            "github.com": "304404ab99d5ad6aec973ae8fe97c27a0d433b73"
+            "github.com": "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"
         }
     },
     "extra": {
