@@ -23,7 +23,6 @@
             <div id="openMenu" class="fixed lg:hidden top-0 left-0 pt-2 z-40">
                 <button type="button" class="flex items-center justify-center h-12 w-12 rounded-r-lg bg-blue-500">
                     <span class="sr-only">@lang('admin-dashboard::layout.open-menu')</span>
-                    <!-- Heroicon name: outline/x -->
                     <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -31,18 +30,9 @@
             </div>
 
             <!-- основной контент -->
-            <main class="flex-1 relative overflow-y-auto focus:outline-none">
-                <div class="py-6 pt-16 lg:pt-6">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                        <h1 class="text-2xl font-semibold text-gray-900">@lang('admin-dashboard::layout.title')</h1>
-                    </div>
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                        <!-- Replace with your content -->
-                        <div class="py-4 space-y-4">
-                            {{ $slot }}
-                        </div>
-                        <!-- /End replace -->
-                    </div>
+            <main class="flex-1 relative overflow-y-auto focus:outline-none py-6 pt-16 lg:pt-6">
+                <div class="max-w-7xl mx-auto p-4 sm:px-6 md:px-8">
+                    {{ $slot }}
                 </div>
             </main>
         </div>

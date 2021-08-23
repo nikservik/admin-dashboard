@@ -62,7 +62,7 @@ php artisan vendor:publish  --tag="admin-dashboard-assets"
 
 После генерации стилей, их нужно опубликовать в основном приложении.
 Сначала нужно загрузить обновленную версию пакета `admin-dashboard` командой `composer update`.
-После этого опубликовать файл стилей командой `php artisan vendor:publish --tag=admin-dashboard-assets`.
+После этого опубликовать файл стилей командой `php artisan vendor:publish --tag=admin-dashboard-assets --force`.
 Можно еще поменять строку подключения стилей в `resources/views/layout.blade.php`
 
 ## Тестирование
