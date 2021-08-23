@@ -31,7 +31,7 @@
 
             <!-- основной контент -->
             <main class="flex-1 relative overflow-y-auto focus:outline-none">
-                <div class="md:py-4 lg:py-6 pt-16 lg:pt-6">
+                <div class="md:px-4 lg:px-6 pt-16 lg:pt-4 pb-6">
                     {{ $slot }}
                 </div>
             </main>
