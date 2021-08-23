@@ -8,7 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@lang('admin-dashboard::layout.page-title')</title>
 
-    <link rel="stylesheet" href="/css/style.css?3">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="stylesheet" href="/css/admin.css?3">
     <livewire:styles />
 </head>
 
