@@ -68,5 +68,6 @@
         widen.addEventListener('click', widenMenu)
         menu.addEventListener('mouseover', widenMenu)
     </script>
+    <livewire:scripts />
 </body>
 </html>
