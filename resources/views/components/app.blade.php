@@ -69,5 +69,6 @@
         menu.addEventListener('mouseover', widenMenu)
     </script>
     <livewire:scripts />
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
 </body>
 </html>
