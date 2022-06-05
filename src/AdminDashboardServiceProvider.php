@@ -4,8 +4,11 @@ namespace Nikservik\AdminDashboard;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Nikservik\AdminDashboard\Components\App;
 use Nikservik\AdminDashboard\Components\Menu;
+use Nikservik\AdminDashboard\Modals\BladeModal;
+use Nikservik\AdminDashboard\Modals\Modal;
 
 class AdminDashboardServiceProvider extends ServiceProvider
 {
@@ -47,5 +50,11 @@ class AdminDashboardServiceProvider extends ServiceProvider
             App::class,
             Menu::class,
         ]);
+        Blade::component('admin-blade-modal', BladeModal::class);
+    }
+
+    protected function registerLivewireComponents()
+    {
+        Livewire::component('admin-dashboard-modal', Modal::class);
     }
 }

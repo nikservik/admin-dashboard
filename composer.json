@@ -21,6 +21,7 @@
         "illuminate/contracts": "^8.0",
         "illuminate/database": "^8.0",
         "illuminate/support": "^8.0",
+        "livewire/livewire": "^2.5",
         "lorisleiva/laravel-actions": "^2.1",
         "nikservik/users": "^1.01"
     },
@@ -52,7 +53,6 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "github-oauth": {
-            "github.com": "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"
         }
     },
     "extra": {
