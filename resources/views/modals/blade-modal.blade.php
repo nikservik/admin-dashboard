@@ -1,4 +1,4 @@
-<div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+<div class="fixed z-30 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
@@ -28,7 +28,22 @@
         </div>
       </div>
       <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-        <button wire:click="confirm" type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 {{ $okButtonColor }} text-base font-medium text-white hover:{{ $okButtonColorHover }} focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">{{ $okButton }}</button>
+        <button
+            @click="loading = true; $wire.call('confirm')"
+            x-data="{ loading: false }"
+            @modal-loaded.window="loading = false"
+            type="button"
+            class="w-full inline-flex items-center justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 {{ $okButtonColor }} text-base font-medium text-white hover:{{ $okButtonColorHover }} disabled:{{ $okButtonColorDisabled }} focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
+            @if(! $this->canBeSaved) disabled @endif
+        >
+          <span x-show="loading">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -ml-1 mr-2 text-white animate-spin" fill="none" viewBox="0 0 40 40" stroke="currentColor" stroke-width="3">
+                <circle class="opacity-30" cx="20" cy="20" r="18"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M38 20c0-9.94-8.06-18-18-18" />
+            </svg>
+          </span>
+          <span>{{ $okButton }}</span>
+        </button>
         <button wire:click="close" type="button" class="mt-3 w-full inline-flex justify-center rounded-lg border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none sm:mt-0 sm:w-auto sm:text-sm">{{ $cancelButton }}</button>
       </div>
     </div>

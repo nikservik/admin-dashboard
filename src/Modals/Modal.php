@@ -6,6 +6,12 @@ use Livewire\Component;
 
 class Modal extends Component
 {
+    /**
+     * По этому событию будет вызываться обработчик open
+     * @var string
+     */
+    protected string $listenEvent = '';
+
     protected string $view = '';
     public string $titleKey = '';
     public string $messageKey = '';
@@ -46,15 +52,40 @@ class Modal extends Component
         $this->close();
     }
 
+    /**
+     * Возвращает разрешение сохранять.
+     * По умолчанию сохранять можно всегда.
+     * @return bool
+     */
+    public function getCanBeSavedProperty(): bool
+    {
+        return true;
+    }
+
     protected function prepareMessage($id)
     {
         // здесь можно добавить кастомизацию сообщения, например:
         // $this->message = trans($this->messageKey, ['book' => Book::findOrFail($id)->title]);
     }
 
-    protected function submitDoneEvent(): void
+    protected function submitDoneEvent(array $parameters = []): void
     {
+        if (count($parameters) > 0) {
+            $this->emit($this->doneEvent, ...$parameters);
+
+            return;
+        }
+
         $this->emit($this->doneEvent, $this->confirmedId);
+    }
+
+    protected function getListeners(): array
+    {
+        if ($this->listenEvent) {
+            return [$this->listenEvent => 'open'];
+        }
+
+        return $this->listeners;
     }
 
 }
