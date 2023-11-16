@@ -10,6 +10,7 @@ class BladeModal extends Component
 {
     public string $okButtonColor = '';
     public string $okButtonColorHover = '';
+    public string $okButtonColorDisabled = '';
     public string $iconBgColor = '';
     public string $title = '';
     public string $okButton = '';
@@ -23,6 +24,7 @@ class BladeModal extends Component
         $this->okButton = $okButton;
         $this->cancelButton = $cancelButton;
         $this->okButtonColorHover = Str::beforeLast($okButtonColor, '-') . '-' . (intval(Str::afterLast($okButtonColor, '-')) + 100);
+        $this->okButtonColorDisabled = Str::beforeLast($okButtonColor, '-') . '-' . (intval(Str::afterLast($okButtonColor, '-')) - 200);
     }
 
     public function render()
