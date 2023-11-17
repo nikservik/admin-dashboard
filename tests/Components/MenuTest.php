@@ -100,8 +100,8 @@ class MenuTest extends TestCase
                 trans('admin-nest::admin.dashboard-name'),
                 '/admin-nest/route1',
                 trans('admin-nest::admin.dashboard-menu.name1'),
-                'bg-blue-600  text-blue-50',
                 '/admin-nest/route2',
+                'bg-blue-500  text-blue-50',
                 trans('admin-nest::admin.dashboard-menu.name2'),
             ], false);
     }
@@ -116,11 +116,23 @@ class MenuTest extends TestCase
                 trans('admin-test::admin.dashboard-name'),
                 'bg-blue-600  text-blue-50',
                 trans('admin-nest::admin.dashboard-name'),
-                'bg-blue-600  text-blue-50',
                 '/admin-nest',
+                'bg-blue-500  text-blue-50',
                 trans('admin-nest::admin.dashboard-menu.name1'),
                 '/admin-nest/route2',
                 trans('admin-nest::admin.dashboard-menu.name2'),
             ], false);
+    }
+
+    public function test_blade_render()
+    {
+        Config::set('admin-dashboard.modules', ['admin-test', 'admin-nest']);
+
+        $this->blade(
+            '<x-admin-dashboard-menu :active="$active" :active-sub="$activeSub" />',
+            ['active' => '', 'activeSub' => ''],
+        )
+            ->assertSee(trans('admin-test::admin.dashboard-name'))
+            ->assertSee(trans('admin-nest::admin.dashboard-name'));
     }
 }
