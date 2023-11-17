@@ -16,7 +16,7 @@
 <body>
     <div class="h-screen flex overflow-hidden overflow-y-scroll bg-gray-100">
         <!-- menu -->
-        <x-admin-dashboard-menu :active="$active" />
+        <x-admin-dashboard-menu :active="$active" :active-sub="$activeSub" />
 
         <div class="flex flex-col flex-1 overflow-x-hidden overflow-y-scroll">
             <!-- открывалка меню -->

@@ -28,13 +28,30 @@
                     <div class="ml-4 inline-block compact:hidden">@lang('admin-dashboard::layout.home')</div>
                 </a>
                 @foreach ($modules as $module)
-                    <a href="/{{ config($module . '.route') }}" class="@if($active == $module) bg-blue-600 @endif text-blue-50 hover:bg-blue-600 flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!-- Heroicon name: outline/users -->
-                        <svg class="flex-shrink-0 h-6 w-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            @lang($module . '::admin.dashboard-icon-path')
-                        </svg>
-                        <div class="ml-4 inline-block compact:hidden">@lang($module . '::admin.dashboard-name')</div>
-                    </a>
+                    @if($active == $module && count($submenu) > 0)
+                        <div class="">
+                            <a href="/{{ config($module . '.route') }}" class="bg-blue-600  text-blue-50 hover:bg-blue-600 flex items-center px-2 py-2 text-base font-medium rounded-md">
+                                <svg class="flex-shrink-0 h-6 w-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    @lang($module . '::admin.dashboard-icon-path')
+                                </svg>
+                                <div class="ml-4 inline-block compact:hidden">@lang($module . '::admin.dashboard-name')</div>
+                            </a>
+                            <div class="ml-4 mr-2 p-0.5 rounded-b-md bg-blue-400 space-y-0.5">
+                                @foreach($submenu as $itemName => $path)
+                                    <a href="{{ $path }}" class="block @if($activeSub == $itemName) bg-blue-500 @endif text-blue-50 hover:bg-blue-300 px-2 py-1 text-base rounded-md">
+                                        @lang($module.'::admin.dashboard-menu.'.$itemName)
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    @else
+                        <a href="/{{ config($module . '.route') }}" class="@if($active == $module) bg-blue-600 @endif text-blue-50 hover:bg-blue-600 flex items-center px-2 py-2 text-base font-medium rounded-md">
+                            <svg class="flex-shrink-0 h-6 w-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                @lang($module . '::admin.dashboard-icon-path')
+                            </svg>
+                            <div class="ml-4 inline-block compact:hidden">@lang($module . '::admin.dashboard-name')</div>
+                        </a>
+                    @endif
                 @endforeach
             </nav>
         </div>

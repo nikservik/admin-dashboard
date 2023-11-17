@@ -2,10 +2,7 @@
 
 namespace Nikservik\AdminDashboard\Tests;
 
-use Illuminate\Auth\AuthServiceProvider;
-use Illuminate\Session\SessionServiceProvider;
-use Illuminate\Validation\ValidationServiceProvider;
-use Illuminate\View\ViewServiceProvider;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
 use Lorisleiva\Actions\ActionServiceProvider;
 use Nikservik\AdminDashboard\AdminDashboardServiceProvider;
 use Nikservik\Users\UsersServiceProvider;
@@ -13,6 +10,7 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
+    use InteractsWithViews;
 
     protected function getPackageProviders($app)
     {
