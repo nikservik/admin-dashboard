@@ -9,7 +9,7 @@
     <title>@lang('admin-dashboard::layout.page-title')</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-    <link rel="stylesheet" href="/css/admin.css?4">
+    <link rel="stylesheet" href="/css/admin.css?5">
     <livewire:styles />
 </head>
 

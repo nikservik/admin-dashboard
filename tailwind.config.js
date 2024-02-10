@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
     './../admin-*/resources/views/**/*.blade.php',
+    './../render/resources/views/**/*.blade.php',
   ],
   safelist: [
       'text-su-700', 'text-mo-700', 'text-ma-700', 'text-me-700', 'text-ve-700', 'text-jp-700', 'text-sa-700', 'text-ra-700', 'text-ke-700',
