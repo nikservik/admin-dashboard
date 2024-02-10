@@ -2,25 +2,23 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: {
-      content: [
-        './../admin-*/resources/views/**/*.blade.php',
-      ],
-      safelist: [
-          'text-su-700', 'text-mo-700', 'text-ma-700', 'text-me-700', 'text-ve-700', 'text-jp-700', 'text-sa-700', 'text-ra-700', 'text-ke-700',
-          'hover:bg-su-100', 'hover:bg-mo-100', 'hover:bg-ma-100', 'hover:bg-me-100', 'hover:bg-ve-100', 'hover:bg-jp-100', 'hover:bg-sa-100', 'hover:bg-ra-100', 'hover:bg-ke-100',
-          'sm:bg-su-100', 'sm:bg-mo-100', 'sm:bg-ma-100', 'sm:bg-me-100', 'sm:bg-ve-100', 'sm:bg-jp-100', 'sm:bg-sa-100', 'sm:bg-ra-100', 'sm:bg-ke-100',
-          'bg-su-100', 'bg-mo-100', 'bg-ma-100', 'bg-me-100', 'bg-ve-100', 'bg-jp-100', 'bg-sa-100', 'bg-ra-100', 'bg-ke-100',
-          'bg-su-200', 'bg-mo-200', 'bg-ma-200', 'bg-me-200', 'bg-ve-200', 'bg-jp-200', 'bg-sa-200', 'bg-ra-200', 'bg-ke-200',
-          'bg-su-400', 'bg-mo-400', 'bg-ma-400', 'bg-me-400', 'bg-ve-400', 'bg-jp-400', 'bg-sa-400', 'bg-ra-400', 'bg-ke-400',
-          'border-su-300', 'border-mo-300', 'border-ma-300', 'border-me-300', 'border-ve-300', 'border-jp-300', 'border-sa-300', 'border-ra-300', 'border-ke-300',
-          'border-su-100', 'border-mo-100', 'border-ma-100', 'border-me-100', 'border-ve-100', 'border-jp-100', 'border-sa-100', 'border-ra-100', 'border-ke-100',
-          'sm:border-su-100', 'sm:border-mo-100', 'sm:border-ma-100', 'sm:border-me-100', 'sm:border-ve-100', 'sm:border-jp-100', 'sm:border-sa-100', 'sm:border-ra-100', 'sm:border-ke-100',
-          'hover:border-su-300', 'hover:border-mo-300', 'hover:border-ma-300', 'hover:border-me-300', 'hover:border-ve-300', 'hover:border-jp-300', 'hover:border-sa-300', 'hover:border-ra-300', 'hover:border-ke-300',
-          'first:mt-px', 'first:border-t', 'mt-px', 'border-t',
-          'pl-2', 'pl-4', 'pl-6', 'pl-8', 'pl-10',
-      ],
-  },
+  content: [
+    './../admin-*/resources/views/**/*.blade.php',
+  ],
+  safelist: [
+      'text-su-700', 'text-mo-700', 'text-ma-700', 'text-me-700', 'text-ve-700', 'text-jp-700', 'text-sa-700', 'text-ra-700', 'text-ke-700',
+      'hover:bg-su-100', 'hover:bg-mo-100', 'hover:bg-ma-100', 'hover:bg-me-100', 'hover:bg-ve-100', 'hover:bg-jp-100', 'hover:bg-sa-100', 'hover:bg-ra-100', 'hover:bg-ke-100',
+      'sm:bg-su-100', 'sm:bg-mo-100', 'sm:bg-ma-100', 'sm:bg-me-100', 'sm:bg-ve-100', 'sm:bg-jp-100', 'sm:bg-sa-100', 'sm:bg-ra-100', 'sm:bg-ke-100',
+      'bg-su-100', 'bg-mo-100', 'bg-ma-100', 'bg-me-100', 'bg-ve-100', 'bg-jp-100', 'bg-sa-100', 'bg-ra-100', 'bg-ke-100',
+      'bg-su-200', 'bg-mo-200', 'bg-ma-200', 'bg-me-200', 'bg-ve-200', 'bg-jp-200', 'bg-sa-200', 'bg-ra-200', 'bg-ke-200',
+      'bg-su-400', 'bg-mo-400', 'bg-ma-400', 'bg-me-400', 'bg-ve-400', 'bg-jp-400', 'bg-sa-400', 'bg-ra-400', 'bg-ke-400',
+      'border-su-300', 'border-mo-300', 'border-ma-300', 'border-me-300', 'border-ve-300', 'border-jp-300', 'border-sa-300', 'border-ra-300', 'border-ke-300',
+      'border-su-100', 'border-mo-100', 'border-ma-100', 'border-me-100', 'border-ve-100', 'border-jp-100', 'border-sa-100', 'border-ra-100', 'border-ke-100',
+      'sm:border-su-100', 'sm:border-mo-100', 'sm:border-ma-100', 'sm:border-me-100', 'sm:border-ve-100', 'sm:border-jp-100', 'sm:border-sa-100', 'sm:border-ra-100', 'sm:border-ke-100',
+      'hover:border-su-300', 'hover:border-mo-300', 'hover:border-ma-300', 'hover:border-me-300', 'hover:border-ve-300', 'hover:border-jp-300', 'hover:border-sa-300', 'hover:border-ra-300', 'hover:border-ke-300',
+      'first:mt-px', 'first:border-t', 'mt-px', 'border-t',
+      'pl-2', 'pl-4', 'pl-6', 'pl-8', 'pl-10',
+  ],
   darkMode: 'media',
   theme: {
     colors: {
@@ -29,7 +27,7 @@ module.exports = {
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
-      gray: colors.blueGray,
+      gray: colors.slate,
       red: colors.red,
       blue: colors.blue,
       green: colors.emerald,
