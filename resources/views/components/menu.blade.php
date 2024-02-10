@@ -36,7 +36,7 @@
                                 </svg>
                                 <div class="ml-4 inline-block compact:hidden">@lang($module . '::admin.dashboard-name')</div>
                             </a>
-                            <div class="ml-4 mr-2 p-0.5 rounded-b-md bg-blue-400 space-y-0.5">
+                            <div class="ml-4 mr-2 p-0.5 rounded-b-md bg-blue-400 space-y-0.5 compact:hidden">
                                 @foreach($submenu as $itemName => $path)
                                     <a href="{{ $path }}" class="block @if($activeSub == $itemName) bg-blue-500 @endif text-blue-50 hover:bg-blue-300 px-2 py-1 text-base rounded-md">
                                         @lang($module.'::admin.dashboard-menu.'.$itemName)
