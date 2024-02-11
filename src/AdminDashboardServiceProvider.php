@@ -52,6 +52,9 @@ class AdminDashboardServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/assets' => public_path('css'),
         ], 'admin-dashboard-assets');
+        $this->publishes([
+            __DIR__.'/../resources/sass' => resource_path('css/vendor/admin-dashboard'),
+        ], 'admin-dashboard-sass');
     }
 
     public function register()

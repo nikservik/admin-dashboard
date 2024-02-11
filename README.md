@@ -40,6 +40,13 @@ php artisan vendor:publish  --tag="admin-dashboard-config"
 ```bash
 php artisan vendor:publish  --tag="admin-dashboard-assets"
 ```
+Можно опубликовать стили sass, чтобы подключить их к общим стилям 
+и собирать классы только для используемых пакетов.
+```bash
+php artisan vendor:publish  --tag="admin-dashboard-sass" --force
+```
+Они будут скопированы в папку `resources/css/vendor/admin-dashboard`
+После этого их можно подключить в общий sass с помощью `@import './vendor/admin-dashboard.admin.sass';`
 
 ## Использование
 
